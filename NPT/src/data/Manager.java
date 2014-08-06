@@ -22,7 +22,12 @@ public class Manager {
 
 	public ImageIcon getRandomImage() {
 		imgIndex = random(48);
-		URL imageURL = cldr.getResource("data/IMG/" + imgIndex + ".png");
+		int choice = random(2);
+		URL imageURL;
+		if (choice == 1)
+			imageURL = cldr.getResource("data/IMG/" + imgIndex + ".png");
+		else
+			imageURL = cldr.getResource("data/IMG/" + imgIndex + " (2).png");
 		ImageIcon img = new ImageIcon(imageURL);
 		return img;
 
